@@ -9,7 +9,9 @@ This is an implementation of the same card game that's built in into the ChastiK
 import ChastilockGame from 'chastilock-cardgame';
 
 const options = {
-  
+  max: {
+    red: 600
+  }
 }
 
 const game = new ChastilockGame(options);
