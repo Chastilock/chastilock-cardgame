@@ -10,7 +10,7 @@ import ChastilockGame from 'chastilock-cardgame';
 
 const options = {
   max: {
-    red: 600
+    red: 599 /* Same as CK */
   }
 }
 
