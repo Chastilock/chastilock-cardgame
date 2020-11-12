@@ -21,6 +21,18 @@ class Lock {
     return this.getCardsOfType(CardType.STICKY);
   }
 
+  public getFreeze(): number {
+    return this.getCardsOfType(CardType.FREEZE)
+  }
+
+  public getDouble(): number {
+    return this.getCardsOfType(CardType.DOUBLE)
+  }
+
+  public getReset(): number {
+    return this.getCardsOfType(CardType.RESET)
+  }
+
   public getYellow(): number {
     let yellow = 0;
 
