@@ -1,3 +1,5 @@
+import Config from './model/Config';
+
 class ChastilockGame {
   public config: Config;
 

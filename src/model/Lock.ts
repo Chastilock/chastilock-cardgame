@@ -1,49 +1,66 @@
-import CardType, { isYellowCard } from './CardType';
-
-export type CardMapping = Map<CardType, number>;
+import CardMapping from './CardMapping';
+import CardType, { ALL_YELLOWS } from './CardType';
+import LockConfig from './LockConfig';
 
 class Lock {
-  private cards: CardMapping;
+  public cards: CardMapping;
+  public nextDraw = 0;
+  public config: LockConfig;
+  public greensDrawn = 0;
 
-  constructor(cards: CardMapping) {
+  constructor(config: LockConfig, cards: CardMapping) {
+    this.config = config;
     this.cards = cards;
   }
 
-  public getCardsOfType(type: CardType): number {
-    return this.cards.get(type) || 0;
+  /**
+   * Sets draw time to current interval.
+   */
+  public doRegularCooldown(): void {
+    this.nextDraw = this.getConfig().interval;
   }
 
-  public getRed(): number {
-    return this.getCardsOfType(CardType.RED);
+  /**
+   * Completely resets the lock to it's initial state.
+   * 
+   * Also known as keyholder-reset.
+   */
+  public resetHard(): void {
+    const newMap = Object.assign({}, this.getConfig().initial.map);
+    this.cards.map = newMap;
+
+    this.greensDrawn = 0;
   }
 
-  public getSticky(): number {
-    return this.getCardsOfType(CardType.STICKY);
-  }
+  /**
+   * Resets the number of green, red and yellow cards.
+   * 
+   * Also known as reset-card reset.
+   */
+  public resetSoft(): void {
+    this.greensDrawn = 0;
 
-  public getFreeze(): number {
-    return this.getCardsOfType(CardType.FREEZE)
-  }
+    this.getCards().setCardsOfType(CardType.GREEN, this.getConfig().initial.getGreen());
+    this.getCards().setCardsOfType(CardType.RED, this.getConfig().initial.getRed());
 
-  public getDouble(): number {
-    return this.getCardsOfType(CardType.DOUBLE)
-  }
-
-  public getReset(): number {
-    return this.getCardsOfType(CardType.RESET)
-  }
-
-  public getYellow(): number {
-    let yellow = 0;
-
-    this.cards.forEach((value: number, key: CardType) => {
-      if (isYellowCard(key)) {
-        yellow = yellow + value;
-      }
+    // reset yellow cards
+    ALL_YELLOWS.forEach((yellowType: CardType) => {
+      this.getCards().setCardsOfType(yellowType, this.getConfig().initial.getCardsOfType(yellowType));
     });
-
-    return yellow;
   }
+
+  public getNextDraw(): number {
+    return this.nextDraw;
+  }
+
+  public getConfig(): LockConfig {
+    return this.config;
+  }
+
+  public getCards(): CardMapping {
+    return this.cards;
+  }
+
 }
 
 export default Lock;
