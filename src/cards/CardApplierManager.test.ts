@@ -102,4 +102,14 @@ describe('CardApplierManager', () => {
     expect(lock.getNextDraw()).toBe(lockConfig.interval);
     expect(lock.getCards().getSticky()).toBe(20);
   });
+
+  it('applies freeze cards correctly', () => {
+    const lock = new Lock(lockConfig, new CardMapping(new Map()));
+    lock.getCards().setCardsOfType(CardType.FREEZE, 20);
+
+    applierManager.apply(lock, CardType.FREEZE);
+
+    expect(lock.nextDraw > 2 * lockConfig.interval && lock.nextDraw < 4 * lockConfig.interval).toBeTruthy();
+    expect(lock.getCards().getFreeze()).toBe(19);
+  });
 });

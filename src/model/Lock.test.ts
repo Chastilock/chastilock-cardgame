@@ -12,7 +12,7 @@ initial.set(CardType.YELLOW_PLUS1, 10);
 initial.set(CardType.RESET, 1);
 
 export const lockConfig: LockConfig = {
-  interval: 0,
+  interval: 30000,
   multipleGreensRequired: false,
   initial: new CardMapping(initial),
   autoResets: {
