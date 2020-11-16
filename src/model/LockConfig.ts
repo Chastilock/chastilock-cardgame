@@ -1,14 +1,14 @@
-import CardMapping from './CardMapping';
+import CardMapping from './CardMapping'
 
-type LockConfig = {
-  interval: number,
-  initial: CardMapping,
-  multipleGreensRequired: boolean,
+interface LockConfig {
+  interval: number
+  initial: CardMapping
+  multipleGreensRequired: boolean
   autoResets: {
-    enabled: boolean,
-    frequencyHours?: number,
+    enabled: boolean
+    frequencyHours?: number
     maximumResets?: number
   }
 }
 
-export default LockConfig;
+export default LockConfig

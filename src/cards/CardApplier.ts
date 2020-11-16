@@ -1,5 +1,5 @@
-import CardType from '../model/CardType';
-import Lock from '../model/Lock';
+import CardType from '../model/CardType'
+import Lock from '../model/Lock'
 
 interface CardApplier {
   /**
@@ -7,7 +7,7 @@ interface CardApplier {
    * run for the given card type.
    * @param type the type that needs to be applied
    */
-  canHandle(type: CardType): boolean;
+  canHandle: (type: CardType) => boolean
 
   /**
    * Applies this card to a certain lock. It does not modify
@@ -16,7 +16,7 @@ interface CardApplier {
    * @param lock the lock to apply to
    * @param type the type of card that is being processed
    */
-  apply(lock: Lock, type?: CardType): void;
+  apply: (lock: Lock, type: CardType) => void
 }
 
-export default CardApplier;
+export default CardApplier

@@ -1,20 +1,20 @@
-import CardApplier from './CardApplier';
-import Lock from '../model/Lock';
-import CardType from '../model/CardType';
+import CardApplier from './CardApplier'
+import Lock from '../model/Lock'
+import CardType from '../model/CardType'
 
-import RedCardApplier from './appliers/RedCardApplier';
-import GreenCardApplier from './appliers/GreenCardApplier';
-import YellowCardApplier from './appliers/YellowCardApplier';
-import ResetCardApplier from './appliers/ResetCardApplier';
-import StickyCardApplier from './appliers/StickyCardApplier';
-import FreezeCardApplier from './appliers/FreezeCardApplier';
+import RedCardApplier from './appliers/RedCardApplier'
+import GreenCardApplier from './appliers/GreenCardApplier'
+import YellowCardApplier from './appliers/YellowCardApplier'
+import ResetCardApplier from './appliers/ResetCardApplier'
+import StickyCardApplier from './appliers/StickyCardApplier'
+import FreezeCardApplier from './appliers/FreezeCardApplier'
 
 class CardApplierManager {
-  appliers: CardApplier[];
+  appliers: CardApplier[]
 
-  constructor(appliers?: CardApplier[]) {
+  constructor (appliers?: CardApplier[]) {
     if (typeof appliers !== 'undefined') {
-      this.appliers = appliers;
+      this.appliers = appliers
     } else {
       this.appliers = [
         new GreenCardApplier(),
@@ -22,18 +22,18 @@ class CardApplierManager {
         new YellowCardApplier(),
         new ResetCardApplier(),
         new StickyCardApplier(),
-        new FreezeCardApplier(),
+        new FreezeCardApplier()
       ]
     }
   }
 
-  public apply(lock: Lock, cardType: CardType): void {
+  public apply (lock: Lock, cardType: CardType): void {
     this.appliers.forEach(applier => {
       if (applier.canHandle(cardType)) {
-        applier.apply(lock, cardType);
+        applier.apply(lock, cardType)
       }
-    });
+    })
   }
 }
 
-export default CardApplierManager;
+export default CardApplierManager

@@ -14,7 +14,7 @@ enum CardType {
 }
 
 export const isYellowCard = (type: CardType): boolean =>
-  type.toString().startsWith('YELLOW');
+  type.toString().startsWith('YELLOW')
 
 export const ALL_YELLOWS: CardType[] = [
   CardType.YELLOW_PLUS1,
@@ -23,6 +23,6 @@ export const ALL_YELLOWS: CardType[] = [
   CardType.YELLOW_MINUS1,
   CardType.YELLOW_MINUS2,
   CardType.YELLOW_MINUS3
-];
+]
 
-export default CardType;
+export default CardType

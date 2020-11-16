@@ -1,11 +1,11 @@
-import Config from './model/Config';
+import Config from './model/Config'
 
 class ChastilockGame {
-  public config: Config;
+  public config: Config
 
-  constructor(config: Config) {
-    this.config = config;
+  constructor (config: Config) {
+    this.config = config
   }
 }
 
-export default ChastilockGame;
+export default ChastilockGame

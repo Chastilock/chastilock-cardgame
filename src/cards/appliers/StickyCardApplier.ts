@@ -1,9 +1,9 @@
-import CardType from '../../model/CardType';
-import Lock from '../../model/Lock';
-import CardApplier from '../CardApplier';
+import CardType from '../../model/CardType'
+import Lock from '../../model/Lock'
+import CardApplier from '../CardApplier'
 
 class StickyCardApplier implements CardApplier {
-  canHandle(type: CardType): boolean {
+  canHandle (type: CardType): boolean {
     return type === CardType.STICKY
   }
 
@@ -11,10 +11,10 @@ class StickyCardApplier implements CardApplier {
    * Does nothing but set the lock on cooldown.
    * @param lock the lock to modify
    */
-  apply(lock: Lock): void {
+  apply (lock: Lock): void {
     // Next draw time is set
-    lock.doRegularCooldown();
+    lock.doRegularCooldown()
   }
 }
 
-export default StickyCardApplier;
+export default StickyCardApplier

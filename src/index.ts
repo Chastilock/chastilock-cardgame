@@ -1,3 +1,3 @@
-import ChastilockGame from './ChastilockGame';
+import ChastilockGame from './ChastilockGame'
 
-export default ChastilockGame;
+export default ChastilockGame
