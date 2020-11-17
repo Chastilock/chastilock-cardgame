@@ -18,7 +18,7 @@ class FreezeCardApplier implements CardApplier {
 
     const multiplier = 2 + Math.random() * 2
 
-    lock.nextDraw = lockConfig.interval * multiplier
+    lock.nextDraw = lockConfig.intervalMinutes * multiplier
     lock.getCards().setCardsOfType(CardType.FREEZE, lock.getCards().getFreeze() - 1)
   }
 }

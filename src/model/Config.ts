@@ -1,5 +1,6 @@
 interface Config {
   max: {
+    green: number
     red: number
     sticky: number
     yellow: number

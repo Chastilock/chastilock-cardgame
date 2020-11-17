@@ -5,16 +5,44 @@ This is an implementation of the same card game that's built in into the ChastiK
 `yarn add chastilock-cardgame`
 
 ## Usage
-```javascript
-import ChastilockGame from 'chastilock-cardgame';
+```typescript
+import { ChastilockGame, Lock, LockConfig, CardMapping } from 'chastilock-cardgame'
 
 const options = {
   max: {
-    red: 599 /* Same as CK */
+    green: 100, /* Same as CK */
+    red: 599, /* Same as CK */
+    sticky: 100, /* Same as CK */
+    yellow: 1495, /* Same as CK */
+    freeze: 100, /* Same as CK */
+    double: 100, /* Same as CK */
+    reset: 100, /* Same as CK */
   }
 }
 
-const game = new ChastilockGame(options);
+// Create the initial card mapping. This would be the amount of cards. This should be persisted somewhere.
+const cards: CardMapping = new CardMapping()
+cards.setCardsOfType(CardType.RED, 1)
+cards.setCardsOfType(CardType.GREEN, 10)
+cards.setCardsOfType(CardType.YELLOW_PLUS1, 5)
+cards.setCardsOfType(CardType.RESET, 2)
+cards.setCardsOfType(CardType.DOUBLE, 3)
+
+// Configuration (settings) of this lock
+const lockConfig: LockConfig = {
+  intervalMinutes: 30000, // draw interval
+  greensRequired: 10, // amount of green cards to find to unlock
+  initial: new CardMapping(initial), // initial card values. Mostly required to perform a reset.
+  autoResets: {
+    enabled: false // whether or not auto resets are enabled. Used for estimations.
+  }
+}
+
+// the cards here passed are the current cards. This allows for easier persistance of a lock.
+const lock = new Lock(lockConfig, cards)
+
+// Create the game instance
+const game = new ChastilockGame(options, lock)
 
 ```
 

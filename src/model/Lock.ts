@@ -17,7 +17,7 @@ class Lock {
    * Sets draw time to current interval.
    */
   public doRegularCooldown (): void {
-    this.nextDraw = this.getConfig().interval
+    this.nextDraw = this.getConfig().intervalMinutes
   }
 
   /**

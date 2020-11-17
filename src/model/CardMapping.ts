@@ -3,8 +3,12 @@ import CardType, { isYellowCard } from './CardType'
 class CardMapping {
   public map: Map<CardType, number>
 
-  constructor (map: Map<CardType, number>) {
-    this.map = map
+  constructor (map?: Map<CardType, number>) {
+    if (map === null) {
+      this.map = map
+    } else {
+      this.map = new Map()
+    }
   }
 
   public getCardsOfType (type: CardType): number {

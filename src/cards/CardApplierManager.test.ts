@@ -13,7 +13,7 @@ describe('CardApplierManager', () => {
 
     applierManager.apply(lock, CardType.RED)
 
-    expect(lock.getNextDraw()).toBe(lockConfig.interval)
+    expect(lock.getNextDraw()).toBe(lockConfig.intervalMinutes)
     expect(lock.getCards().getRed()).toBe(99)
   })
 
@@ -99,7 +99,7 @@ describe('CardApplierManager', () => {
 
     applierManager.apply(lock, CardType.STICKY)
 
-    expect(lock.getNextDraw()).toBe(lockConfig.interval)
+    expect(lock.getNextDraw()).toBe(lockConfig.intervalMinutes)
     expect(lock.getCards().getSticky()).toBe(20)
   })
 
@@ -109,7 +109,7 @@ describe('CardApplierManager', () => {
 
     applierManager.apply(lock, CardType.FREEZE)
 
-    expect(lock.nextDraw > 2 * lockConfig.interval && lock.nextDraw < 4 * lockConfig.interval).toBeTruthy()
+    expect(lock.nextDraw > 2 * lockConfig.intervalMinutes && lock.nextDraw < 4 * lockConfig.intervalMinutes).toBeTruthy()
     expect(lock.getCards().getFreeze()).toBe(19)
   })
 })

@@ -12,7 +12,7 @@ initial.set(CardType.YELLOW_PLUS1, 10)
 initial.set(CardType.RESET, 1)
 
 export const lockConfig: LockConfig = {
-  interval: 30000,
+  intervalMinutes: 30,
   multipleGreensRequired: false,
   initial: new CardMapping(initial),
   autoResets: {
@@ -22,7 +22,7 @@ export const lockConfig: LockConfig = {
 
 describe('Lock', () => {
   it('sums yellow cards correctly', () => {
-    const cards: CardMapping = new CardMapping(new Map())
+    const cards: CardMapping = new CardMapping()
     cards.setCardsOfType(CardType.YELLOW_MINUS1, 1)
     cards.setCardsOfType(CardType.YELLOW_MINUS2, 2)
     cards.setCardsOfType(CardType.YELLOW_MINUS3, 3)
