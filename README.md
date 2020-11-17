@@ -35,7 +35,7 @@ In order to set up git hooks, simply run:
 
 `yarn setuphooks`
 
-Please note that hooks were not yet tested on Windows. But they should be platform independant.
+Please note that hooks were not yet tested on Windows. But they should be platform independent.
 
 ### Running tests
 
