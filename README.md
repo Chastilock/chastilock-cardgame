@@ -6,9 +6,9 @@ This is an implementation of the same card game that's built in into the ChastiK
 
 ## Usage
 ```typescript
-import { ChastilockGame, Lock, LockConfig, CardMapping } from 'chastilock-cardgame'
+import { ChastilockGame, Config, Lock, LockConfig, CardMapping, CardType } from 'chastilock-cardgame'
 
-const options = {
+const options: Config = {
   max: {
     green: 100, /* Same as CK */
     red: 599, /* Same as CK */
