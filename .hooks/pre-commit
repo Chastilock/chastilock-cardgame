@@ -1,0 +1,4 @@
+#!/bin/sh
+# This file should be platform independant
+
+yarn run hooks:pre-commit
