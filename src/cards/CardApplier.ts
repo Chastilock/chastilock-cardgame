@@ -1,5 +1,5 @@
-import CardType from '../model/CardType'
-import Lock from '../model/Lock'
+import CardType from 'model/CardType'
+import Lock from 'model/Lock'
 
 interface CardApplier {
   /**

@@ -1,4 +1,4 @@
-import Config from './model/Config'
+import Config from 'model/Config'
 
 class ChastilockGame {
   public config: Config

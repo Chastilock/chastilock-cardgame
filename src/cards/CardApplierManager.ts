@@ -1,6 +1,6 @@
 import CardApplier from './CardApplier'
-import Lock from '../model/Lock'
-import CardType from '../model/CardType'
+import Lock from 'model/Lock'
+import CardType from 'model/CardType'
 
 import RedCardApplier from './appliers/RedCardApplier'
 import GreenCardApplier from './appliers/GreenCardApplier'

@@ -1,8 +1,8 @@
 import CardApplierManager from './CardApplierManager'
-import Lock from '../model/Lock'
-import { lockConfig } from '../model/Lock.test'
-import CardMapping from '../model/CardMapping'
-import CardType, { ALL_YELLOWS } from '../model/CardType'
+import Lock from 'model/Lock'
+import { lockConfig } from 'model/Lock.test'
+import CardMapping from 'model/CardMapping'
+import CardType, { ALL_YELLOWS } from 'model/CardType'
 
 describe('CardApplierManager', () => {
   const applierManager = new CardApplierManager()

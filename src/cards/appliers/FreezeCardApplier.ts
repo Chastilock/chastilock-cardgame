@@ -1,7 +1,7 @@
-import CardType from '../../model/CardType'
-import Lock from '../../model/Lock'
-import { lockConfig } from '../../model/Lock.test'
-import CardApplier from '../CardApplier'
+import CardType from 'model/CardType'
+import Lock from 'model/Lock'
+import { lockConfig } from 'model/Lock.test'
+import CardApplier from 'cards/CardApplier'
 
 class FreezeCardApplier implements CardApplier {
   canHandle (type: CardType): boolean {

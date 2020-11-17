@@ -1,6 +1,6 @@
-import CardType from '../../model/CardType'
-import Lock from '../../model/Lock'
-import CardApplier from '../CardApplier'
+import CardType from 'model/CardType'
+import Lock from 'model/Lock'
+import CardApplier from 'cards/CardApplier'
 
 class ResetCardApplier implements CardApplier {
   canHandle (type: CardType): boolean {

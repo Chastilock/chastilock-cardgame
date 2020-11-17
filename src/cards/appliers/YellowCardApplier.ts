@@ -1,6 +1,6 @@
-import CardType, { isYellowCard } from '../../model/CardType'
-import Lock from '../../model/Lock'
-import CardApplier from '../CardApplier'
+import CardType, { isYellowCard } from 'model/CardType'
+import Lock from 'model/Lock'
+import CardApplier from 'cards/CardApplier'
 
 const mapping = {
   [CardType.YELLOW_PLUS1.toString()]: 1,
