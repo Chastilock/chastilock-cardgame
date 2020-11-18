@@ -12,4 +12,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: ci/build.sh
+      - name: Run build script
+        run: ci/build.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_ACCOUNT: ${{ secrets.GH_ACCOUNT }}
