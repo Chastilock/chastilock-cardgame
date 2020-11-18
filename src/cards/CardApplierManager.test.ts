@@ -79,9 +79,9 @@ describe('CardApplierManager', () => {
     applierManager.apply(lock, CardType.RESET)
 
     // greens, reds and yellows should be reset
-    expect(lock.getCards().getRed()).toBe(lockConfig.initial.getRed())
-    expect(lock.getCards().getGreen()).toBe(lockConfig.initial.getGreen())
-    expect(lock.getCards().getYellow()).toBe(lockConfig.initial.getYellow())
+    expect(lock.getCards().getRed()).toBe(lockConfig.initial.min.getRed())
+    expect(lock.getCards().getGreen()).toBe(lockConfig.initial.min.getGreen())
+    expect(lock.getCards().getYellow()).toBe(lockConfig.initial.min.getYellow())
 
     // one reset should have been removed
     expect(lock.getCards().getReset()).toBe(1)

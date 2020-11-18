@@ -1,5 +1,5 @@
 import CardMapping from './CardMapping'
-import CardType, { ALL_YELLOWS } from './CardType'
+import CardType, { ALL_YELLOWS, ALL_CARDS } from './CardType'
 import LockConfig from './LockConfig'
 
 class Lock {
@@ -8,9 +8,40 @@ class Lock {
   public config: LockConfig
   public greensDrawn = 0
 
-  constructor (config: LockConfig, cards: CardMapping) {
+  constructor (config: LockConfig, cards?: CardMapping) {
     this.config = config
-    this.cards = cards
+
+    if (cards !== undefined) {
+      this.cards = cards
+    } else {
+      this.cards = this.createCards()
+    }
+  }
+
+  /**
+   * Sets up the lock after first initialization. Performs the random logic
+   * to define how many cards of what type are being used.
+   *
+   * May also be called when resetting.
+   * @returns the initial CardMapping
+   */
+  public createCards (): CardMapping {
+    const cardMapping = new CardMapping()
+
+    const getCardAmount = (min: number, max: number): number =>
+      Math.floor(Math.random() * (max - min + 1)) + min
+
+    ALL_CARDS.forEach(cardType =>
+      cardMapping.setCardsOfType(
+        cardType,
+        getCardAmount(
+          this.getConfig().initial.min.getCardsOfType(cardType),
+          this.getConfig().initial.max.getCardsOfType(cardType)
+        )
+      )
+    )
+
+    return cardMapping
   }
 
   /**
@@ -26,8 +57,7 @@ class Lock {
    * Also known as keyholder-reset.
    */
   public resetHard (): void {
-    const newMap = Object.assign({}, this.getConfig().initial.map)
-    this.cards.map = newMap
+    this.cards = this.createCards()
 
     this.greensDrawn = 0
   }
@@ -38,15 +68,14 @@ class Lock {
    * Also known as reset-card reset.
    */
   public resetSoft (): void {
+    // We'll only be using the red, green and yellow cards out of this.
+    const completelyNewCards = this.createCards()
+
     this.greensDrawn = 0
 
-    this.getCards().setCardsOfType(CardType.GREEN, this.getConfig().initial.getGreen())
-    this.getCards().setCardsOfType(CardType.RED, this.getConfig().initial.getRed())
-
-    // reset yellow cards
-    ALL_YELLOWS.forEach((yellowType: CardType) => {
-      this.getCards().setCardsOfType(yellowType, this.getConfig().initial.getCardsOfType(yellowType))
-    })
+    const relevantCardTypes = [CardType.GREEN, CardType.RED, ...ALL_YELLOWS]
+    relevantCardTypes.forEach(cardType =>
+      this.getCards().setCardsOfType(cardType, completelyNewCards.getCardsOfType(cardType)))
   }
 
   public getNextDraw (): number {

@@ -11,10 +11,15 @@ initial.set(CardType.YELLOW_MINUS1, 10)
 initial.set(CardType.YELLOW_PLUS1, 10)
 initial.set(CardType.RESET, 1)
 
+const initialCardMapping = new CardMapping(initial)
+
 export const lockConfig: LockConfig = {
   intervalMinutes: 30,
   multipleGreensRequired: false,
-  initial: new CardMapping(initial),
+  initial: {
+    min: initialCardMapping,
+    max: initialCardMapping
+  },
   autoResets: {
     enabled: false
   }

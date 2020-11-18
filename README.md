@@ -35,7 +35,10 @@ cards.setCardsOfType(CardType.DOUBLE, 3)
 const lockConfig: LockConfig = {
   intervalMinutes: 30, // draw interval
   greensRequired: 10, // amount of green cards to find to unlock
-  initial: new CardMapping(initial), // initial card values. Mostly required to perform a reset.
+  initial: { // if min and max are set to the same values, then no random is applied when lock is reset / created.
+    min: new CardMapping(initial), // initial card values. Mostly required to perform a reset. All max values from the lock config.
+    max: new CardMapping(initial) // initial card values. Mostly required to perform a reset. All min values from the lock config.
+  }
   autoResets: {
     enabled: false // whether or not auto resets are enabled. Used for estimations.
   }
@@ -43,6 +46,9 @@ const lockConfig: LockConfig = {
 
 // the cards here passed are the current cards. This allows for easier persistance of a lock.
 const lock = new Lock(lockConfig, cards)
+
+// alternatively: load the lock from an existing CardMapping (for example when loading a lock from a database)
+const otherLock = new Lock(lockConfig);
 
 // Create the game instance
 const game = new ChastilockGame(options, lock)

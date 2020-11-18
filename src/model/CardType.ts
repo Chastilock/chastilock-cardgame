@@ -25,4 +25,14 @@ export const ALL_YELLOWS: CardType[] = [
   CardType.YELLOW_MINUS3
 ]
 
+export const ALL_CARDS: CardType[] = [
+  CardType.GREEN,
+  CardType.RED,
+  CardType.STICKY,
+  ...ALL_YELLOWS,
+  CardType.FREEZE,
+  CardType.DOUBLE,
+  CardType.RESET
+]
+
 export default CardType
