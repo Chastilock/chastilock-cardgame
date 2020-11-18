@@ -2,11 +2,11 @@
 
 # Load version
 version=$(cat VERSION)
-component='chastilock-cardgame'
+component="$GITHUB_REPOSITORY"
 tag="v$version"
 
 publish_branch='publish'
-self='git@github.com:Chastilock/chastilock-cardgame.git'
+self="https://${GITHUB_ACCOUNT}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
 echo "Building $component @ $version [$tag]"
 
