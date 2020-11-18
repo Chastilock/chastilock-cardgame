@@ -2,12 +2,15 @@
 This is an implementation of the same card game that's built in into the ChastiKey app.
 
 ## Installing
-`yarn add chastilock-cardgame`
+```bash
+yarn add git+https://github.com/Chastilock/chastilock-cardgame.git#v1.0.0
+```
 
 ## Usage
 ```typescript
 import { ChastilockGame, Config, Lock, LockConfig, CardMapping, CardType } from 'chastilock-cardgame'
 
+// This is the global config to be used.
 const options: Config = {
   max: {
     green: 100, /* Same as CK */
@@ -55,24 +58,34 @@ const game = new ChastilockGame(options, lock)
 
 ### Installing dependencies
 
-`yarn`
+```bash
+yarn
+```
 
 ### Setting up git hooks
 It is recommended to set up git hooks, so the code will be validated against the guidelines (linting & testing) before the commit is done.
 In order to set up git hooks, simply run:
 
-`yarn setuphooks`
+```bash
+yarn setuphooks
+```
 
 Please note that hooks were not yet tested on Windows. But they should be platform independent.
 
 ### Running tests
 
-`yarn test`
+```bash
+yarn test
+```
 
 ### Linting
 
-`yarn lint`
+```bash
+yarn lint
+```
 
 ### Linting & auto fixing
 
-`yarn lint --fix`
+```bash
+yarn lint --fix
+```
