@@ -26,6 +26,8 @@ git config --local user.email 'info@chastilock.com'
 
 # Remove tag (if this is a republish)
 git tag -d $tag
+# Remote tag
+git push --delete "https://${GITHUB_ACCOUNT}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" $tag
 
 # Delete anything (except dot files)
 rm -rf *
