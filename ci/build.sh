@@ -33,6 +33,8 @@ rm -rf *
 # Copy content from other repository
 cp -av $main_repo_path/* .
 
+# Install & build
+yarn
 yarn build
 
 # Commit the dist folder (and all other files)
