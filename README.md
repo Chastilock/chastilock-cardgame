@@ -33,7 +33,7 @@ cards.setCardsOfType(CardType.DOUBLE, 3)
 
 // Configuration (settings) of this lock
 const lockConfig: LockConfig = {
-  intervalMinutes: 30000, // draw interval
+  intervalMinutes: 30, // draw interval
   greensRequired: 10, // amount of green cards to find to unlock
   initial: new CardMapping(initial), // initial card values. Mostly required to perform a reset.
   autoResets: {
