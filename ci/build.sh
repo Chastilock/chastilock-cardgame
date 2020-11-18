@@ -4,6 +4,7 @@
 version=$(cat VERSION)
 component="$GITHUB_REPOSITORY"
 tag="v$version"
+main_repo_path=$(pwd)
 
 publish_branch='publish'
 self="https://${GITHUB_ACCOUNT}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
@@ -14,6 +15,9 @@ echo "Building $component @ $version [$tag]"
 cd ..
 git clone $self publish-branch
 cd publish-branch
+publish_repo_path=$(pwd)
+
+# Checkout the publish branch
 git checkout $publish_branch
 
 # Setting up git user & email
@@ -27,6 +31,6 @@ git tag -d $tag
 rm -rf *
 
 # Copy content from other repository
-cp -av ../$component/* .
+cp -av $main_repo_path/* .
 
 ls
