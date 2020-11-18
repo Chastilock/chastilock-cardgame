@@ -33,4 +33,15 @@ rm -rf *
 # Copy content from other repository
 cp -av $main_repo_path/* .
 
-ls
+yarn build
+
+# Commit the dist folder (and all other files)
+git add -A
+git add --force dist
+git commit -m "[cicd] publishing version: $version"
+
+# Tag the last commit
+git tag $tag
+
+# Push latest commit & tag
+git push origin --tags
