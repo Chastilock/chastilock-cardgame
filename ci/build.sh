@@ -46,4 +46,4 @@ git commit -m "[cicd] publishing version: $version"
 git tag $tag
 
 # Push latest commit & tag
-git push origin --tags
+git push "https://${GITHUB_ACCOUNT}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --tags
