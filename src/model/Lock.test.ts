@@ -2,6 +2,7 @@ import Lock from './Lock'
 import CardMapping from './CardMapping'
 import CardType from './CardType'
 import LockConfig from './LockConfig'
+import Config from './Config'
 
 const initial = new Map()
 initial.set(CardType.RED, 100)
@@ -38,5 +39,24 @@ describe('Lock', () => {
     const lock = new Lock(lockConfig, cards)
 
     expect(lock.getCards().getYellow()).toEqual(21)
+  })
+
+  it('applies the limit correctly', () => {
+    const config: Config = {
+      max: {
+        [CardType.RED]: 150
+      }
+    }
+
+    const lock = new Lock(lockConfig, initialCardMapping)
+
+    lock.getCards().setCardsOfType(CardType.RED, 200)
+
+    expect(lock.getCards().getRed()).toBe(200)
+
+    // Apply limits
+    lock.limit(config)
+
+    expect(lock.getCards().getRed()).toBe(150)
   })
 })

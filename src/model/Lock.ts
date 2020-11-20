@@ -1,5 +1,6 @@
 import CardMapping from './CardMapping'
 import CardType, { ALL_YELLOWS, ALL_CARDS } from './CardType'
+import Config from './Config'
 import LockConfig from './LockConfig'
 
 class Lock {
@@ -76,6 +77,23 @@ class Lock {
     const relevantCardTypes = [CardType.GREEN, CardType.RED, ...ALL_YELLOWS]
     relevantCardTypes.forEach(cardType =>
       this.getCards().setCardsOfType(cardType, completelyNewCards.getCardsOfType(cardType)))
+  }
+
+  /**
+   * Limits the lock to the configured maximum of cards
+   * @param config the config to respect
+   */
+  public limit (config: Config): void {
+    this.getCards().map.forEach((value, key) => {
+      const maxCards = config.max[key]
+
+      if (maxCards !== 0 && maxCards !== undefined) {
+        // apply the limit
+        if (value > maxCards) {
+          this.getCards().setCardsOfType(key, maxCards)
+        }
+      }
+    })
   }
 
   public getNextDraw (): number {
