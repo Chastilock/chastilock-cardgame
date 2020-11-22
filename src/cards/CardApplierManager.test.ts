@@ -39,32 +39,27 @@ describe('CardApplierManager', () => {
     applierManager.apply(lock, CardType.YELLOW_PLUS1)
     expect(lock.getNextDraw()).toBe(0)
     expect(lock.getCards().getRed()).toBe(101)
-    expect(lock.getCards().getYellow()).toBe(11)
+    expect(lock.getCards().getYellow()).toBe(9)
 
     applierManager.apply(lock, CardType.YELLOW_PLUS2)
     expect(lock.getNextDraw()).toBe(0)
     expect(lock.getCards().getRed()).toBe(103)
-    expect(lock.getCards().getYellow()).toBe(10)
+    expect(lock.getCards().getYellow()).toBe(8)
 
     applierManager.apply(lock, CardType.YELLOW_PLUS3)
     expect(lock.getNextDraw()).toBe(0)
     expect(lock.getCards().getRed()).toBe(106)
-    expect(lock.getCards().getYellow()).toBe(9)
+    expect(lock.getCards().getYellow()).toBe(7)
 
     applierManager.apply(lock, CardType.YELLOW_MINUS1)
     expect(lock.getNextDraw()).toBe(0)
     expect(lock.getCards().getRed()).toBe(105)
-    expect(lock.getCards().getYellow()).toBe(8)
+    expect(lock.getCards().getYellow()).toBe(6)
 
     applierManager.apply(lock, CardType.YELLOW_MINUS2)
     expect(lock.getNextDraw()).toBe(0)
     expect(lock.getCards().getRed()).toBe(103)
-    expect(lock.getCards().getYellow()).toBe(7)
-
-    applierManager.apply(lock, CardType.YELLOW_MINUS3)
-    expect(lock.getNextDraw()).toBe(0)
-    expect(lock.getCards().getRed()).toBe(100)
-    expect(lock.getCards().getYellow()).toBe(6)
+    expect(lock.getCards().getYellow()).toBe(5)
   })
 
   it('applies reset cards correctly', () => {
