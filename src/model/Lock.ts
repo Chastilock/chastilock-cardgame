@@ -96,6 +96,14 @@ class Lock {
     })
   }
 
+  public isFinished (): boolean {
+    if (this.getConfig().multipleGreensRequired) {
+      return this.greensDrawn !== 0 && this.getCards().getGreen() === 0
+    } else {
+      return this.greensDrawn >= 1
+    }
+  }
+
   public getNextDraw (): number {
     return this.nextDraw
   }
