@@ -25,13 +25,12 @@ describe('Lock', () => {
     const cards: CardMapping = new CardMapping()
     cards.setCardsOfType(CardType.YELLOW_MINUS1, 1)
     cards.setCardsOfType(CardType.YELLOW_MINUS2, 2)
-    cards.setCardsOfType(CardType.YELLOW_MINUS3, 3)
     cards.setCardsOfType(CardType.YELLOW_PLUS1, 4)
     cards.setCardsOfType(CardType.YELLOW_PLUS2, 5)
     cards.setCardsOfType(CardType.YELLOW_PLUS3, 6)
 
     const lock = new Lock(lockConfig, cards)
 
-    expect(lock.getCards().getYellow()).toEqual(21)
+    expect(lock.getCards().getYellow()).toEqual(18)
   })
 })

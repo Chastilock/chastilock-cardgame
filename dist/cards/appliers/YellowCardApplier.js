@@ -25,8 +25,7 @@ const mapping = {
     [CardType_1.default.YELLOW_PLUS2.toString()]: 2,
     [CardType_1.default.YELLOW_PLUS3.toString()]: 3,
     [CardType_1.default.YELLOW_MINUS1.toString()]: -1,
-    [CardType_1.default.YELLOW_MINUS2.toString()]: -2,
-    [CardType_1.default.YELLOW_MINUS3.toString()]: -3
+    [CardType_1.default.YELLOW_MINUS2.toString()]: -2
 };
 class YellowCardApplier {
     canHandle(type) {

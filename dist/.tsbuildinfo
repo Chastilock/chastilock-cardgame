@@ -172,8 +172,8 @@
         "affectsGlobalScope": false
       },
       "../src/model/CardType.ts": {
-        "version": "49c3b08b8062734eb98340f274e087aed33b2764d5745076489621d059e237fb",
-        "signature": "5ca85fade300b763ec4d7637f7b694ac12bf083bc35474a750fd971dfd2a9b33",
+        "version": "877465f12a6082ca636641bf53e02ccee0545d4fc4aef2ede1a338008495f51c",
+        "signature": "cb427924fcd35680431d2f9a82c7b17d6958e93b6a01933a7062c24d0ecdc060",
         "affectsGlobalScope": false
       },
       "../src/model/CardMapping.ts": {
@@ -212,7 +212,7 @@
         "affectsGlobalScope": false
       },
       "../src/cards/appliers/YellowCardApplier.ts": {
-        "version": "2b486de260e3f8e29aef397b6f6ec79e087081d79dd2fc918e4978b964e574b3",
+        "version": "a29724f831571da6b4ae6e53c622e57aaeed9f016399574513b1e0e958f2e7f3",
         "signature": "11767d312a815cd4de9e0997b92e60ffedc1f6692aebdf866c237feed377433b",
         "affectsGlobalScope": false
       },
@@ -227,7 +227,7 @@
         "affectsGlobalScope": false
       },
       "../src/model/Lock.test.ts": {
-        "version": "f969dfd88ad8ac850b8dbf45a3143a51c70f9f4e7ee4e4f2983c1d341f633d1e",
+        "version": "7a025e248d6b7294741275db6388cbedb213aa8bd9f2e615048e0a46d2562ce9",
         "signature": "6d7a9c768ba2c78fd5829a84a5bd0494a2fa41cfca175b7fa1eb8c2c8d609a5c",
         "affectsGlobalScope": false
       },
@@ -242,7 +242,7 @@
         "affectsGlobalScope": false
       },
       "../src/cards/CardApplierManager.test.ts": {
-        "version": "8ae7314b0f291fa1312d981283a4d8f4523ad15b8d31b3b93add63cdc52d8b1b",
+        "version": "4762a11165ede92204016ac7b514eab83b20cb29ee508504af5cd7b451757b38",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
