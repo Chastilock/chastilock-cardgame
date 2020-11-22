@@ -2,12 +2,15 @@
 This is an implementation of the same card game that's built in into the ChastiKey app.
 
 ## Installing
-`yarn add chastilock-cardgame`
+```bash
+yarn add git+https://github.com/Chastilock/chastilock-cardgame.git#v1.0.0
+```
 
 ## Usage
 ```typescript
 import { ChastilockGame, Config, Lock, LockConfig, CardMapping, CardType } from 'chastilock-cardgame'
 
+// This is the global config to be used.
 const options: Config = {
   max: {
     green: 100, /* Same as CK */
@@ -30,9 +33,12 @@ cards.setCardsOfType(CardType.DOUBLE, 3)
 
 // Configuration (settings) of this lock
 const lockConfig: LockConfig = {
-  intervalMinutes: 30000, // draw interval
+  intervalMinutes: 30, // draw interval
   greensRequired: 10, // amount of green cards to find to unlock
-  initial: new CardMapping(initial), // initial card values. Mostly required to perform a reset.
+  initial: { // if min and max are set to the same values, then no random is applied when lock is reset / created.
+    min: new CardMapping(initial), // initial card values. Mostly required to perform a reset. All max values from the lock config.
+    max: new CardMapping(initial) // initial card values. Mostly required to perform a reset. All min values from the lock config.
+  }
   autoResets: {
     enabled: false // whether or not auto resets are enabled. Used for estimations.
   }
@@ -40,6 +46,9 @@ const lockConfig: LockConfig = {
 
 // the cards here passed are the current cards. This allows for easier persistance of a lock.
 const lock = new Lock(lockConfig, cards)
+
+// alternatively: load the lock from an existing CardMapping (for example when loading a lock from a database)
+const otherLock = new Lock(lockConfig);
 
 // Create the game instance
 const game = new ChastilockGame(options, lock)
@@ -55,24 +64,34 @@ const game = new ChastilockGame(options, lock)
 
 ### Installing dependencies
 
-`yarn`
+```bash
+yarn
+```
 
 ### Setting up git hooks
 It is recommended to set up git hooks, so the code will be validated against the guidelines (linting & testing) before the commit is done.
 In order to set up git hooks, simply run:
 
-`yarn setuphooks`
+```bash
+yarn setuphooks
+```
 
 Please note that hooks were not yet tested on Windows. But they should be platform independent.
 
 ### Running tests
 
-`yarn test`
+```bash
+yarn test
+```
 
 ### Linting
 
-`yarn lint`
+```bash
+yarn lint
+```
 
 ### Linting & auto fixing
 
-`yarn lint --fix`
+```bash
+yarn lint --fix
+```

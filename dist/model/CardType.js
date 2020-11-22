@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ALL_YELLOWS = exports.isYellowCard = void 0;
+exports.ALL_CARDS = exports.ALL_YELLOWS = exports.isYellowCard = void 0;
 var CardType;
 (function (CardType) {
     CardType["GREEN"] = "GREEN";
@@ -22,6 +22,15 @@ exports.ALL_YELLOWS = [
     CardType.YELLOW_PLUS3,
     CardType.YELLOW_MINUS1,
     CardType.YELLOW_MINUS2
+];
+exports.ALL_CARDS = [
+    CardType.GREEN,
+    CardType.RED,
+    CardType.STICKY,
+    ...exports.ALL_YELLOWS,
+    CardType.FREEZE,
+    CardType.DOUBLE,
+    CardType.RESET
 ];
 exports.default = CardType;
 //# sourceMappingURL=CardType.js.map

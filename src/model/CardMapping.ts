@@ -19,6 +19,27 @@ class CardMapping {
     this.map.set(type, cards)
   }
 
+  /**
+   * Draws a random card type of this set.
+   */
+  public drawRandomType (): CardType {
+    const totalCards = this.getTotalCards()
+
+    let accumulator = 0
+    const chances = Object.values(this.map).map((element: number) => (accumulator = accumulator + element))
+    const drawnIndex = Math.random() * totalCards
+    const drawnCard = Object.keys(this.map)[chances.filter(element => element <= drawnIndex).length] as CardType
+
+    return drawnCard
+  }
+
+  /**
+   * Get total cards in this mapping
+   */
+  public getTotalCards (): number {
+    return Object.values(this.map).reduce((prev: number, cur: number) => prev + cur, 0)
+  }
+
   public getGreen (): number {
     return this.getCardsOfType(CardType.GREEN)
   }

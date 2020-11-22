@@ -4,6 +4,14 @@ declare class CardMapping {
     constructor(map?: Map<CardType, number>);
     getCardsOfType(type: CardType): number;
     setCardsOfType(type: CardType, cards: number): void;
+    /**
+     * Draws a random card type of this set.
+     */
+    drawRandomType(): CardType;
+    /**
+     * Get total cards in this mapping
+     */
+    getTotalCards(): number;
     getGreen(): number;
     getRed(): number;
     getSticky(): number;

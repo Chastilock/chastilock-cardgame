@@ -13,4 +13,5 @@ declare enum CardType {
 }
 export declare const isYellowCard: (type: CardType) => boolean;
 export declare const ALL_YELLOWS: CardType[];
+export declare const ALL_CARDS: CardType[];
 export default CardType;

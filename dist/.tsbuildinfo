@@ -161,39 +161,29 @@
         "signature": "32b8443be144970b813b9dd72dcdba2059fbdfdae4d3a50c4d8a158ed6057bbe",
         "affectsGlobalScope": false
       },
-      "../src/model/Config.ts": {
-        "version": "881de15e7b41fe0f11cf4e0a8be6cfd514fb8a78ce96f2fe4332374562f26879",
-        "signature": "29fd7cc43919d42766a5dcd6a3f31f0f4955cece9d3d10d5433bdaed157b926d",
-        "affectsGlobalScope": false
-      },
-      "../src/ChastilockGame.ts": {
-        "version": "7131212985903b442b8d31084b605f1e958e21788c92300612a71104121afb93",
-        "signature": "96388fd6745fc5cd288f8583a97ba6adb228b111f555f5a6f4cfeacf45e8b344",
-        "affectsGlobalScope": false
-      },
       "../src/model/CardType.ts": {
-        "version": "877465f12a6082ca636641bf53e02ccee0545d4fc4aef2ede1a338008495f51c",
-        "signature": "cb427924fcd35680431d2f9a82c7b17d6958e93b6a01933a7062c24d0ecdc060",
+        "version": "ded72c0353981fb41f2023ccdc2fc9fe204cbbea1f5edd4b56424e527928fe83",
+        "signature": "973f8f71b2c5e78963693f29c5bd322d963e6f819782d0cd180436bff87bcc6a",
+        "affectsGlobalScope": false
+      },
+      "../src/model/Config.ts": {
+        "version": "07ac3bc6f754471b57e0219f944e8164654e8f466b14b9455623305dbe7f85cc",
+        "signature": "4c71660207fced617c5be27594b201f476afdce9204ed0036ae27ee0ee0c34dc",
         "affectsGlobalScope": false
       },
       "../src/model/CardMapping.ts": {
-        "version": "08de3e5c426740450fea63b68b6d3cef55a04df25b5d51da79a0cde21cef3a74",
-        "signature": "546c1b0c7b6fe869ab4f0617a9452d2f4e203da22aedb8df98d59b967324313b",
+        "version": "064e5c06fbf1f829e190002ac86b62555847529806950f96122f9ccab815958d",
+        "signature": "7349a50bd77568629368db427b1815cc9f3f302e488ec06bc674fad1f8faabf9",
         "affectsGlobalScope": false
       },
       "../src/model/LockConfig.ts": {
-        "version": "7ea7ee55c66cc50ae728f28883d770d071c17f1069407d491901965100a0dfb0",
-        "signature": "4ac677dae0e663156e14fe4caa0bae93c67f671f29a49745439b8d32bf97e2c7",
+        "version": "f7a7f350b76a59bbda7b79467cd3123822f5c1231d3f7ef3f05ca292f8a4b8f0",
+        "signature": "927937c7d0f8c262ae872e33d625ac0131cc110f02ac9ed46ff0919487660cde",
         "affectsGlobalScope": false
       },
       "../src/model/Lock.ts": {
-        "version": "f452db8dfc15d8566d887790167e406c1c3377471637fff041e9becc91cf0c35",
-        "signature": "23fa52daa2aea1853af0e8d8c0d9b22f398b7d4b3ff40cd549c580a7144dbac5",
-        "affectsGlobalScope": false
-      },
-      "../src/index.ts": {
-        "version": "90e3623c7ef2b3346567dc3f767831531f3f481b3f2e24aa5bffafb7b8008c67",
-        "signature": "c6bcf79b53bd0aed62ef9895ec066b64c84e6b59f09b66dc32c714f5d41e0cdd",
+        "version": "f3631f7f3893ff348a6455c7d9d6b968c6e9078dc452810aaa79210e33ab5eb4",
+        "signature": "03fbaeed58c555654ed91b71f0679716484b30d16431ff0593be9ae740ce3c79",
         "affectsGlobalScope": false
       },
       "../src/cards/CardApplier.ts": {
@@ -227,7 +217,7 @@
         "affectsGlobalScope": false
       },
       "../src/model/Lock.test.ts": {
-        "version": "7a025e248d6b7294741275db6388cbedb213aa8bd9f2e615048e0a46d2562ce9",
+        "version": "388fe99f1a5114b7bfa8cad933b030eee0621c167728cf2f2feedf3f77bbc14e",
         "signature": "6d7a9c768ba2c78fd5829a84a5bd0494a2fa41cfca175b7fa1eb8c2c8d609a5c",
         "affectsGlobalScope": false
       },
@@ -241,8 +231,18 @@
         "signature": "d7e63a8af27b6be194baf57fe413ac584e616752c1fb8636570c0be6558010ad",
         "affectsGlobalScope": false
       },
+      "../src/ChastilockGame.ts": {
+        "version": "3b115477abffc0f7151bd7de91992a24bd49b0799af9b8f1315856e019679c79",
+        "signature": "027a644739b5fe27f28d548f4cdd871fac436eba2a42853c3248f2ff45d1534f",
+        "affectsGlobalScope": false
+      },
+      "../src/index.ts": {
+        "version": "90e3623c7ef2b3346567dc3f767831531f3f481b3f2e24aa5bffafb7b8008c67",
+        "signature": "c6bcf79b53bd0aed62ef9895ec066b64c84e6b59f09b66dc32c714f5d41e0cdd",
+        "affectsGlobalScope": false
+      },
       "../src/cards/CardApplierManager.test.ts": {
-        "version": "4762a11165ede92204016ac7b514eab83b20cb29ee508504af5cd7b451757b38",
+        "version": "f3047059ff2196f0a3ad76cf9d31405f9e1ab3cdf1f4bb76a4f5b097574d56e7",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
@@ -850,7 +850,10 @@
         "../node_modules/pretty-format/build/types.d.ts"
       ],
       "../src/ChastilockGame.ts": [
-        "../src/model/Config.ts"
+        "../src/cards/CardApplierManager.ts",
+        "../src/model/CardType.ts",
+        "../src/model/Config.ts",
+        "../src/model/Lock.ts"
       ],
       "../src/cards/CardApplier.ts": [
         "../src/model/CardType.ts",
@@ -916,15 +919,20 @@
       "../src/model/CardMapping.ts": [
         "../src/model/CardType.ts"
       ],
+      "../src/model/Config.ts": [
+        "../src/model/CardType.ts"
+      ],
       "../src/model/Lock.test.ts": [
         "../src/model/CardMapping.ts",
         "../src/model/CardType.ts",
+        "../src/model/Config.ts",
         "../src/model/Lock.ts",
         "../src/model/LockConfig.ts"
       ],
       "../src/model/Lock.ts": [
         "../src/model/CardMapping.ts",
         "../src/model/CardType.ts",
+        "../src/model/Config.ts",
         "../src/model/LockConfig.ts"
       ],
       "../src/model/LockConfig.ts": [

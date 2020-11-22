@@ -14,10 +14,14 @@ initial.set(CardType_1.default.FREEZE, 2);
 initial.set(CardType_1.default.YELLOW_MINUS1, 10);
 initial.set(CardType_1.default.YELLOW_PLUS1, 10);
 initial.set(CardType_1.default.RESET, 1);
+const initialCardMapping = new CardMapping_1.default(initial);
 exports.lockConfig = {
     intervalMinutes: 30,
     multipleGreensRequired: false,
-    initial: new CardMapping_1.default(initial),
+    initial: {
+        min: initialCardMapping,
+        max: initialCardMapping
+    },
     autoResets: {
         enabled: false
     }
@@ -32,6 +36,19 @@ describe('Lock', () => {
         cards.setCardsOfType(CardType_1.default.YELLOW_PLUS3, 6);
         const lock = new Lock_1.default(exports.lockConfig, cards);
         expect(lock.getCards().getYellow()).toEqual(18);
+    });
+    it('applies the limit correctly', () => {
+        const config = {
+            max: {
+                [CardType_1.default.RED]: 150
+            }
+        };
+        const lock = new Lock_1.default(exports.lockConfig, initialCardMapping);
+        lock.getCards().setCardsOfType(CardType_1.default.RED, 200);
+        expect(lock.getCards().getRed()).toBe(200);
+        // Apply limits
+        lock.limit(config);
+        expect(lock.getCards().getRed()).toBe(150);
     });
 });
 //# sourceMappingURL=Lock.test.js.map

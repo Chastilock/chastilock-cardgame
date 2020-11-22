@@ -2,7 +2,10 @@ import CardMapping from './CardMapping'
 
 interface LockConfig {
   intervalMinutes: number
-  initial: CardMapping
+  initial: {
+    max: CardMapping
+    min: CardMapping
+  }
   multipleGreensRequired: boolean
   autoResets: {
     enabled: boolean
