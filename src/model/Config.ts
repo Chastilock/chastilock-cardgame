@@ -1,12 +1,9 @@
-type Config = {
+import CardType from './CardType'
+
+interface Config {
   max: {
-    red: number,
-    sticky: number,
-    yellow: number,
-    freeze: number,
-    double: number,
-    reset: number
+    [key in CardType]?: number
   }
 }
 
-export default Config;
+export default Config

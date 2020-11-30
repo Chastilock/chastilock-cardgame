@@ -1,0 +1,19 @@
+name: Create release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish:
+    name: Install and publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Run build script
+        run: ci/build.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_ACCOUNT: ${{ secrets.GH_ACCOUNT }}
