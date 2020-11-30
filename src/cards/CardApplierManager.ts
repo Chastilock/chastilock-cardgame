@@ -8,6 +8,7 @@ import YellowCardApplier from './appliers/YellowCardApplier'
 import ResetCardApplier from './appliers/ResetCardApplier'
 import StickyCardApplier from './appliers/StickyCardApplier'
 import FreezeCardApplier from './appliers/FreezeCardApplier'
+import DoubleCardApplier from './appliers/DoubleCardApplier'
 
 class CardApplierManager {
   appliers: CardApplier[]
@@ -22,7 +23,8 @@ class CardApplierManager {
         new YellowCardApplier(),
         new ResetCardApplier(),
         new StickyCardApplier(),
-        new FreezeCardApplier()
+        new FreezeCardApplier(),
+        new DoubleCardApplier()
       ]
     }
   }

@@ -9,6 +9,7 @@ const YellowCardApplier_1 = __importDefault(require("./appliers/YellowCardApplie
 const ResetCardApplier_1 = __importDefault(require("./appliers/ResetCardApplier"));
 const StickyCardApplier_1 = __importDefault(require("./appliers/StickyCardApplier"));
 const FreezeCardApplier_1 = __importDefault(require("./appliers/FreezeCardApplier"));
+const DoubleCardApplier_1 = __importDefault(require("./appliers/DoubleCardApplier"));
 class CardApplierManager {
     constructor(appliers) {
         if (typeof appliers !== 'undefined') {
@@ -21,7 +22,8 @@ class CardApplierManager {
                 new YellowCardApplier_1.default(),
                 new ResetCardApplier_1.default(),
                 new StickyCardApplier_1.default(),
-                new FreezeCardApplier_1.default()
+                new FreezeCardApplier_1.default(),
+                new DoubleCardApplier_1.default()
             ];
         }
     }

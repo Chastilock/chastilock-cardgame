@@ -105,5 +105,22 @@ describe('CardApplierManager', () => {
         expect(lock.nextDraw > 2 * Lock_test_1.lockConfig.intervalMinutes && lock.nextDraw < 4 * Lock_test_1.lockConfig.intervalMinutes).toBeTruthy();
         expect(lock.getCards().getFreeze()).toBe(19);
     });
+    it('applies double cards correctly', () => {
+        const lock = new Lock_1.default(Lock_test_1.lockConfig, new CardMapping_1.default(new Map()));
+        lock.getCards().setCardsOfType(CardType_1.default.RED, 100);
+        lock.getCards().setCardsOfType(CardType_1.default.YELLOW_PLUS1, 10);
+        lock.getCards().setCardsOfType(CardType_1.default.YELLOW_MINUS1, 10);
+        lock.getCards().setCardsOfType(CardType_1.default.RESET, 3);
+        lock.getCards().setCardsOfType(CardType_1.default.DOUBLE, 2);
+        applierManager.apply(lock, CardType_1.default.DOUBLE);
+        // Reds should be doubled
+        expect(lock.getCards().getRed()).toBe(200);
+        // Yellows should be doubled
+        expect(lock.getCards().getYellow()).toBe(40);
+        // Resets should be untouched
+        expect(lock.getCards().getReset()).toBe(3);
+        // One double should be removed
+        expect(lock.getCards().getDouble()).toBe(1);
+    });
 });
 //# sourceMappingURL=CardApplierManager.test.js.map

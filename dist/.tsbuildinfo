@@ -226,8 +226,13 @@
         "signature": "61566c972ad44b10525c91f092fa445a4649b3788644da796a143b54c17d4532",
         "affectsGlobalScope": false
       },
+      "../src/cards/appliers/DoubleCardApplier.ts": {
+        "version": "b51d40a8267cfc75affd1dc15d3c5b274b991603b879027815a3bae44a7bbdbb",
+        "signature": "6bb5a8b818c4343cc52b59d05f31ce376b7a59c1e2f1a2254b5cab5ee63cd37b",
+        "affectsGlobalScope": false
+      },
       "../src/cards/CardApplierManager.ts": {
-        "version": "520cd04cd0e6555ec9d59f4aec9d52e3231f0e13240f8e8588c6a069bf76f379",
+        "version": "dac825eea1d9ea47f50867a4b5f5e50e5cf755825175b8c0b6d2da07715f58dd",
         "signature": "d7e63a8af27b6be194baf57fe413ac584e616752c1fb8636570c0be6558010ad",
         "affectsGlobalScope": false
       },
@@ -242,7 +247,7 @@
         "affectsGlobalScope": false
       },
       "../src/cards/CardApplierManager.test.ts": {
-        "version": "f3047059ff2196f0a3ad76cf9d31405f9e1ab3cdf1f4bb76a4f5b097574d56e7",
+        "version": "7da9974746eb89de0efa1d9459957714988068541e00baf41dd98393dab48764",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
@@ -868,12 +873,18 @@
       ],
       "../src/cards/CardApplierManager.ts": [
         "../src/cards/CardApplier.ts",
+        "../src/cards/appliers/DoubleCardApplier.ts",
         "../src/cards/appliers/FreezeCardApplier.ts",
         "../src/cards/appliers/GreenCardApplier.ts",
         "../src/cards/appliers/RedCardApplier.ts",
         "../src/cards/appliers/ResetCardApplier.ts",
         "../src/cards/appliers/StickyCardApplier.ts",
         "../src/cards/appliers/YellowCardApplier.ts",
+        "../src/model/CardType.ts",
+        "../src/model/Lock.ts"
+      ],
+      "../src/cards/appliers/DoubleCardApplier.ts": [
+        "../src/cards/CardApplier.ts",
         "../src/model/CardType.ts",
         "../src/model/Lock.ts"
       ],
@@ -1271,6 +1282,7 @@
       "../src/cards/CardApplier.ts",
       "../src/cards/CardApplierManager.test.ts",
       "../src/cards/CardApplierManager.ts",
+      "../src/cards/appliers/DoubleCardApplier.ts",
       "../src/cards/appliers/FreezeCardApplier.ts",
       "../src/cards/appliers/GreenCardApplier.ts",
       "../src/cards/appliers/RedCardApplier.ts",
