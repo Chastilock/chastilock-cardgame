@@ -216,13 +216,8 @@
         "signature": "c87b0c896bb14a04686be7301a57fb3efaab474243496cc91f6cdff18d4e2439",
         "affectsGlobalScope": false
       },
-      "../src/model/Lock.test.ts": {
-        "version": "388fe99f1a5114b7bfa8cad933b030eee0621c167728cf2f2feedf3f77bbc14e",
-        "signature": "6d7a9c768ba2c78fd5829a84a5bd0494a2fa41cfca175b7fa1eb8c2c8d609a5c",
-        "affectsGlobalScope": false
-      },
       "../src/cards/appliers/FreezeCardApplier.ts": {
-        "version": "2acbaa6e9cac56a815ae9a001c70c909dfbf11d10274d59f4b35b43507f94e94",
+        "version": "481415947d447e1f7e247f3ebe353418aa7251e51c231b3584ccfff198990561",
         "signature": "61566c972ad44b10525c91f092fa445a4649b3788644da796a143b54c17d4532",
         "affectsGlobalScope": false
       },
@@ -244,6 +239,11 @@
       "../src/index.ts": {
         "version": "90e3623c7ef2b3346567dc3f767831531f3f481b3f2e24aa5bffafb7b8008c67",
         "signature": "c6bcf79b53bd0aed62ef9895ec066b64c84e6b59f09b66dc32c714f5d41e0cdd",
+        "affectsGlobalScope": false
+      },
+      "../src/model/Lock.test.ts": {
+        "version": "388fe99f1a5114b7bfa8cad933b030eee0621c167728cf2f2feedf3f77bbc14e",
+        "signature": "6d7a9c768ba2c78fd5829a84a5bd0494a2fa41cfca175b7fa1eb8c2c8d609a5c",
         "affectsGlobalScope": false
       },
       "../src/cards/CardApplierManager.test.ts": {
@@ -891,7 +891,6 @@
       "../src/cards/appliers/FreezeCardApplier.ts": [
         "../src/cards/CardApplier.ts",
         "../src/model/CardType.ts",
-        "../src/model/Lock.test.ts",
         "../src/model/Lock.ts"
       ],
       "../src/cards/appliers/GreenCardApplier.ts": [

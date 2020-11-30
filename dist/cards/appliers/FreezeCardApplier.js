@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const CardType_1 = __importDefault(require("../../model/CardType"));
-const Lock_test_1 = require("../../model/Lock.test");
 class FreezeCardApplier {
     canHandle(type) {
         return type === CardType_1.default.FREEZE;
@@ -17,7 +16,7 @@ class FreezeCardApplier {
     apply(lock) {
         lock.resetSoft();
         const multiplier = 2 + Math.random() * 2;
-        lock.nextDraw = Lock_test_1.lockConfig.intervalMinutes * multiplier;
+        lock.nextDraw = lock.config.intervalMinutes * multiplier;
         lock.getCards().setCardsOfType(CardType_1.default.FREEZE, lock.getCards().getFreeze() - 1);
     }
 }
