@@ -1,6 +1,5 @@
 import CardType from 'model/CardType'
 import Lock from 'model/Lock'
-import { lockConfig } from 'model/Lock.test'
 import CardApplier from 'cards/CardApplier'
 
 class FreezeCardApplier implements CardApplier {
@@ -18,7 +17,7 @@ class FreezeCardApplier implements CardApplier {
 
     const multiplier = 2 + Math.random() * 2
 
-    lock.nextDraw = lockConfig.intervalMinutes * multiplier
+    lock.nextDraw = lock.config.intervalMinutes * multiplier
     lock.getCards().setCardsOfType(CardType.FREEZE, lock.getCards().getFreeze() - 1)
   }
 }
