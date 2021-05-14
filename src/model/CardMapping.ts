@@ -4,7 +4,7 @@ class CardMapping {
   public map: Map<CardType, number>
 
   constructor (map?: Map<CardType, number>) {
-    if (map === null) {
+    if (map !== undefined) {
       this.map = map
     } else {
       this.map = new Map()
