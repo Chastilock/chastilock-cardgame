@@ -172,7 +172,7 @@
         "affectsGlobalScope": false
       },
       "../src/model/CardMapping.ts": {
-        "version": "064e5c06fbf1f829e190002ac86b62555847529806950f96122f9ccab815958d",
+        "version": "4706abff413c973145573434cc71395973135a84ffb43cc04deabdc61fadcddc",
         "signature": "7349a50bd77568629368db427b1815cc9f3f302e488ec06bc674fad1f8faabf9",
         "affectsGlobalScope": false
       },
@@ -217,7 +217,7 @@
         "affectsGlobalScope": false
       },
       "../src/cards/appliers/FreezeCardApplier.ts": {
-        "version": "481415947d447e1f7e247f3ebe353418aa7251e51c231b3584ccfff198990561",
+        "version": "00287db0fd8eae13c92de5f1f868ae2c29eafc76d3949cf5851fd71bc9c58cf3",
         "signature": "61566c972ad44b10525c91f092fa445a4649b3788644da796a143b54c17d4532",
         "affectsGlobalScope": false
       },

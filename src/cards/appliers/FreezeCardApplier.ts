@@ -13,8 +13,6 @@ class FreezeCardApplier implements CardApplier {
    * @param lock the lock to modify.
    */
   apply (lock: Lock): void {
-    lock.resetSoft()
-
     const multiplier = 2 + Math.random() * 2
 
     lock.nextDraw = lock.config.intervalMinutes * multiplier

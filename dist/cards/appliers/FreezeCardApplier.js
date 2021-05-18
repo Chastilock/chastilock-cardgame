@@ -14,7 +14,6 @@ class FreezeCardApplier {
      * @param lock the lock to modify.
      */
     apply(lock) {
-        lock.resetSoft();
         const multiplier = 2 + Math.random() * 2;
         lock.nextDraw = lock.config.intervalMinutes * multiplier;
         lock.getCards().setCardsOfType(CardType_1.default.FREEZE, lock.getCards().getFreeze() - 1);

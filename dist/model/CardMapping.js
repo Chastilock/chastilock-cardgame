@@ -22,7 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const CardType_1 = __importStar(require("./CardType"));
 class CardMapping {
     constructor(map) {
-        if (map === null) {
+        if (map !== undefined) {
             this.map = map;
         }
         else {
