@@ -26,9 +26,9 @@ class CardMapping {
     const totalCards = this.getTotalCards()
 
     let accumulator = 0
-    const chances = Object.values(this.map).map((element: number) => (accumulator = accumulator + element))
+    const chances = Array.from(this.map.values()).map((element: number) => (accumulator = accumulator + element))
     const drawnIndex = Math.random() * totalCards
-    const drawnCard = Object.keys(this.map)[chances.filter(element => element <= drawnIndex).length] as CardType
+    const drawnCard = Array.from(this.map.keys())[chances.filter(element => element <= drawnIndex).length]
 
     return drawnCard
   }
@@ -37,7 +37,7 @@ class CardMapping {
    * Get total cards in this mapping
    */
   public getTotalCards (): number {
-    return Object.values(this.map).reduce((prev: number, cur: number) => prev + cur, 0)
+    return Array.from(this.map.values()).reduce((prev: number, cur: number) => prev + cur, 0)
   }
 
   public getGreen (): number {
@@ -64,6 +64,10 @@ class CardMapping {
     return this.getCardsOfType(CardType.RESET)
   }
 
+  public getGoAgain (): number {
+    return this.getCardsOfType(CardType.GO_AGAIN)
+  }
+
   public getYellow (): number {
     let yellow = 0
 
@@ -74,6 +78,18 @@ class CardMapping {
     })
 
     return yellow
+  }
+
+  /**
+   * Creates and returns a new CardMapping with a reference to
+   * a new map containing the same data as this CardMapping
+   */
+  public copyDeep (): CardMapping {
+    const clone = new CardMapping()
+    this.map.forEach((value: number, key: CardType) => {
+      clone.setCardsOfType(key, value)
+    })
+    return clone
   }
 }
 
