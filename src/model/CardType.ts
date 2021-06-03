@@ -9,7 +9,8 @@ enum CardType {
   YELLOW_MINUS2 = 'YELLOW-2',
   FREEZE = 'FREEZE',
   DOUBLE = 'DOUBLE',
-  RESET = 'RESET'
+  RESET = 'RESET',
+  GO_AGAIN = 'GO_AGAIN'
 }
 
 export const isYellowCard = (type: CardType): boolean =>
@@ -33,4 +34,20 @@ export const ALL_CARDS: CardType[] = [
   CardType.RESET
 ]
 
+/**
+ * Cards to be reset by a RESET card
+ */
+export const RESETABLE_CARDS: CardType[] = [
+  CardType.GREEN,
+  CardType.RED,
+  ...ALL_YELLOWS
+]
+
+/**
+ * Cards to be doubled by a DOUBLE card
+ */
+export const DOUBLEABLE_CARDS: CardType[] = [
+  CardType.RED,
+  ...ALL_YELLOWS
+]
 export default CardType
