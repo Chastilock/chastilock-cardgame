@@ -5,9 +5,13 @@ import LockConfig from './LockConfig'
 
 class Lock {
   public cards: CardMapping
-  public nextDraw = 0
   public config: LockConfig
+
+  public elapsedMinutes: number = 0 // minutes since the start of the lock
+  public nextDraw = 0 // time of next draw in terms of minutes since start of lock
+  public chances = 0 // the number of chances accumulated
   public greensDrawn = 0
+  public minutesBeforeGreenAllowed: number // the number of minutes before a green is allowed to be drawn
 
   constructor (config: LockConfig, cards?: CardMapping) {
     this.config = config
@@ -16,6 +20,18 @@ class Lock {
       this.cards = cards
     } else {
       this.cards = this.createCards()
+    }
+
+    // code to determine when greens may first be drawn
+    // currently CK avoids drawing green on first draw and possibly
+    // for longer based on minimum red cards.
+    // https://discord.com/channels/473856867768991744/491277623322738712/828043778379481149
+    // http://chastikey.com/help/doku.php?id=minimum_lock_durations
+    const minReds = config.initial.min.getRed()
+    if (minReds > 1 && minReds !== config.initial.max.getRed()) {
+      this.minutesBeforeGreenAllowed = minReds * config.intervalMinutes
+    } else {
+      this.minutesBeforeGreenAllowed = config.intervalMinutes
     }
   }
 
@@ -43,6 +59,24 @@ class Lock {
     )
 
     return cardMapping
+  }
+
+  /**
+   * Draws a card.  Also enforces rules about drawing a Green card
+   */
+  public drawCard (): CardType {
+    let card = this.getCards().drawRandomType()
+    // draw again if 3 things are true
+    // Note: There is a possible issue here with indefinite postponement if the deck is made up of
+    // predominantly green cards, as in 100 greens and 1 red.   Many draws might be required to find
+    // the one legal red card.  This could be fixed by adding a method to CardMapping that would draw
+    // a non-green card.
+    while (card === CardType.GREEN && // card is green
+      this.elapsedMinutes < this.minutesBeforeGreenAllowed && // too early for green
+      this.getCards().getGreen() !== this.getCards().getTotalCards()) { // there are still non-green cards to draw
+      card = this.getCards().drawRandomType()
+    }
+    return card
   }
 
   /**
