@@ -16,6 +16,7 @@ const initialCardMapping = new CardMapping(initial)
 
 export const lockConfig: LockConfig = {
   intervalMinutes: 30,
+  cumulative: true,
   multipleGreensRequired: false,
   initial: {
     min: initialCardMapping,

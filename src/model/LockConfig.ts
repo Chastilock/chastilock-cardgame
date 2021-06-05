@@ -2,6 +2,7 @@ import CardMapping from './CardMapping'
 
 interface LockConfig {
   intervalMinutes: number
+  cumulative: boolean
   initial: {
     max: CardMapping
     min: CardMapping
