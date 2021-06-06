@@ -4,7 +4,7 @@ import Config from './Config'
 import LockConfig from './LockConfig'
 import Freeze, { FreezeType } from './Freeze'
 
-const DEBUG: boolean = false
+const DEBUG: boolean = true
 
 class Lock {
   public cards: CardMapping
@@ -117,9 +117,13 @@ class Lock {
       }
       card = this.getCards().drawRandomType()
     }
-    // TODO: Later - should drawing affect last draw time, since the user might draw and not apply?
+    // TODO: Later - should drawing affect last draw time and draws, since the user might draw and not apply?
     // perhaps should be moved to manager or applier
     this.lastDrawTime = this.elapsedMinutes
+    this.draws++
+    // for most cards, the next draw is in zero minutes, the Red, Sticky, and Freeze
+    // appliers will replace this 0 with the appropriate value
+    this.nextDraw = 0
     return card
   }
 
@@ -183,6 +187,10 @@ class Lock {
       if (maxCards !== 0 && maxCards !== undefined) {
         // apply the limit
         if (value > maxCards) {
+          // TODO: delete before release
+          if (DEBUG) {
+            console.log('Limiting ', key, ': was ', value, ', now ', maxCards)
+          }
           this.getCards().setCardsOfType(key, maxCards)
         }
       }
@@ -274,7 +282,7 @@ This assumes that keyholder updates will have already be reflected in the cards 
   private checkForAutoResets (): void {
     if (this.autoResetting) {
       if (DEBUG) {
-        console.log('Next autoreset at interval', this.nextAutoResetTime)
+        console.log('Next autoreset will occur at', this.nextAutoResetTime)
       }
       if (this.elapsedMinutes >= this.nextAutoResetTime) {
         this.resetHard()
