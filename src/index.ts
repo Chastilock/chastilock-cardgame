@@ -4,6 +4,7 @@ import LockConfig from 'model/LockConfig'
 import CardMapping from 'model/CardMapping'
 import CardType from 'model/CardType'
 import Config from 'model/Config'
+import { runSimulator } from 'MySimulatorTestCode'
 
 export {
   ChastilockGame,
@@ -13,3 +14,4 @@ export {
   CardType,
   Config
 }
+runSimulator()
